@@ -4,162 +4,707 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Re'yl Clean Service</title>
+  <meta
+    name="description"
+    content="Re'yl Clean Service provides residential and commercial cleaning across Washington. Book a free estimate today."
+  />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --green: #8E9B6D;
-      --darkgreen: #66754C;
+      --green-dark: #66754C;
+      --green-deep: #4f5d3d;
       --cream: #F6EEDB;
       --beige: #D5C7AA;
       --gold: #D4AF37;
+      --gold-dark: #b79222;
       --white: #ffffff;
-      --text: #333333;
+      --text: #2f2f2f;
+      --muted: #6b6b6b;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+      --radius: 18px;
+      --max: 1180px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--cream);
-      color: var(--text);
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Header */
     header {
-      background-color: #8E9B6D;
-      color: white;
-      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(142, 155, 109, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.2px;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 22px;
       flex-wrap: wrap;
-      gap: 15px;
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .nav-links a {
-      color: white;
+    nav a {
+      color: var(--white);
       text-decoration: none;
-      margin-left: 20px;
-      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.95;
     }
 
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dark);
+      text-decoration: none;
+    }
+
+    /* Hero */
     .hero {
-      background: linear-gradient(rgba(102, 117, 76, 0.60), rgba(102, 117, 76, 0.60)),
-        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80");
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(79, 93, 61, 0.64), rgba(79, 93, 61, 0.68)),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
+    }
+
+    .hero-inner {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 0 90px;
+    }
+
+    .hero-card {
+      max-width: 760px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      border-radius: 28px;
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      margin-bottom: 10px;
+      margin: 0 0 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1.03;
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
 
-    .hero h2 {
-      font-size: 24px;
-      margin: 10px 0;
-      font-weight: normal;
+    .hero-sub {
+      margin: 0 0 14px;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      font-weight: 500;
+      opacity: 0.98;
     }
 
-    .hero p {
-      font-size: 20px;
-      margin: 10px 0;
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin: 18px 0 16px;
+      padding: 0;
+      list-style: none;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-points li {
+      background: rgba(255,255,255,0.12);
+      padding: 9px 14px;
+      border-radius: 999px;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin: 18px 0 26px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-contact a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .hero-contact a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .button {
-      display: inline-block;
-      background-color: var(--gold);
-      color: white;
-      padding: 14px 26px;
-      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
-      margin: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .button.primary:hover {
+      background: var(--gold-dark);
     }
 
     .button.secondary {
-      background-color: var(--darkgreen);
+      background: rgba(255,255,255,0.16);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    /* Sections */
     section {
-      padding: 70px 20px;
+      padding: 84px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 42px;
       text-align: center;
     }
 
-    .section-title {
-      font-size: 32px;
-      color: var(--darkgreen);
-      margin-bottom: 40px;
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--green-deep);
+      line-height: 1.08;
     }
 
-    .services {
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* Trust bar */
+    .trust-bar {
+      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .trust-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .trust-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .trust-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green-deep);
+      font-size: 1.06rem;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    /* Services */
+    .services {
+      background: linear-gradient(to bottom, #fbf7ef, var(--cream));
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
     }
 
     .card {
-      background-color: white;
-      padding: 30px;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
       border-radius: 14px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: rgba(142, 155, 109, 0.12);
+      color: var(--green-deep);
+      font-size: 1.4rem;
+      font-weight: 700;
     }
 
     .card h3 {
-      color: var(--darkgreen);
-      margin-top: 0;
+      margin: 0 0 10px;
+      font-family: 'Playfair Display', serif;
+      color: var(--green-deep);
+      font-size: 1.4rem;
     }
 
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    /* How it works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .step-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--green-deep);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-family: 'Playfair Display', serif;
+      color: var(--green-deep);
+      font-size: 1.35rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* About */
     .about {
-      background-color: var(--beige);
+      background: var(--beige);
     }
 
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-panel,
+    .about-highlight {
+      border-radius: 24px;
+      padding: 30px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel {
+      background: rgba(255,255,255,0.72);
+    }
+
+    .about-panel h2,
+    .about-highlight h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+      color: var(--green-deep);
+    }
+
+    .about-panel p,
+    .about-highlight li {
+      color: var(--text);
+    }
+
+    .about-highlight {
+      background: var(--green-deep);
+      color: var(--white);
+    }
+
+    .about-highlight h3 {
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .about-highlight ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .about-highlight li {
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 10px;
+    }
+
+    /* Service area / CTA split */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .panel {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 30px 28px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-family: 'Playfair Display', serif;
+      color: var(--green-deep);
+      font-size: 1.6rem;
+    }
+
+    .panel p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .service-areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .service-areas span {
+      background: rgba(142, 155, 109, 0.12);
+      color: var(--green-deep);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Contact */
     .contact {
-      background-color: var(--green);
-      color: white;
+      background:
+        linear-gradient(rgba(79, 93, 61, 0.95), rgba(79, 93, 61, 0.95)),
+        url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
     }
 
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .contact-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 30px 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    .contact-card h2,
+    .contact-box h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+    }
+
+    .contact-card p,
+    .contact-box p {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+      margin: 22px 0 0;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+      background: rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 600;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,0.16);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
     footer {
-      background-color: var(--darkgreen);
-      color: white;
-      text-align: center;
-      padding: 20px;
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.92);
+      padding: 30px 0;
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 20px;
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .footer-small {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Mobile sticky bar */
+    .mobile-bar {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .service-grid,
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .nav-links a {
-        margin-left: 12px;
+      .about-wrap,
+      .split-grid,
+      .contact-wrap,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .logo {
+        font-size: 1.7rem;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 52px 0 70px;
+      }
+
+      .hero-card {
+        padding: 26px 20px;
+        border-radius: 22px;
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 2.4rem;
       }
 
-      .hero h2 {
-        font-size: 20px;
-      }
-
+      .hero-sub,
       .hero p {
-        font-size: 18px;
+        font-size: 1rem;
+      }
+
+      .service-grid,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .mobile-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        position: sticky;
+        bottom: 12px;
+        z-index: 60;
+        width: min(560px, calc(100% - 20px));
+        margin: 0 auto 12px;
+      }
+
+      .mobile-bar a {
+        min-height: 52px;
+        border-radius: 999px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        box-shadow: var(--shadow);
+      }
+
+      .mobile-bar .call {
+        background: var(--green-deep);
+        color: var(--white);
+      }
+
+      .mobile-bar .book {
+        background: var(--gold);
+        color: var(--white);
       }
     }
   </style>
@@ -167,106 +712,248 @@
 <body>
 
   <header>
-    <nav>
-      <div class="logo">Re'yl Clean Service</div>
+    <div class="container nav-wrap">
+      <a href="#home" class="logo">Re'yl Clean Service</a>
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
+      <nav>
         <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-card">
+          <div class="eyebrow">Residential & Commercial Cleaning</div>
+          <h1>Premium cleaning with a polished, dependable touch.</h1>
+          <p class="hero-sub">
+            Serving clients across Washington with reliable service, detail-focused care, and professional walk-through estimates.
+          </p>
+
+          <ul class="hero-points">
+            <li>Reliable</li>
+            <li>Detailed</li>
+            <li>Affordable</li>
+            <li>Serving Washington</li>
+          </ul>
+
+          <div class="hero-contact">
+            <a href="tel:2065811975">📞 Call or Text: (206) 581-1975</a>
+            <a href="mailto:info@reylcleaning.com">📧 info@reylcleaning.com</a>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button primary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Get a Free Quote</a>
+            <a class="button secondary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book a Free Estimate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-bar">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <strong>Residential & Commercial</strong>
+          <span>Flexible cleaning for homes, offices, and more.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Walk-Through Estimates</strong>
+          <span>Clear pricing after seeing your space in person.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Professional Communication</strong>
+          <span>Fast responses by phone, email, and booking link.</span>
+        </div>
+        <div class="trust-item">
+          <strong>Detail-Focused Service</strong>
+          <span>Clean spaces that feel refreshed, polished, and cared for.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Cleaning services designed around your space.</h2>
+          <p>
+            Whether you need recurring maintenance or a one-time deep clean, Re'yl Clean Service delivers dependable, high-quality cleaning across Washington.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <div class="card">
+            <div class="card-icon">🏠</div>
+            <h3>House Cleaning</h3>
+            <p>Routine or one-time cleaning that keeps your home fresh, welcoming, and well maintained.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🏢</div>
+            <h3>Office Cleaning</h3>
+            <p>Professional cleaning for workspaces that need a spotless, polished, client-ready appearance.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">✨</div>
+            <h3>Deep Cleaning</h3>
+            <p>Focused detail work for kitchens, bathrooms, high-touch surfaces, and overlooked areas.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📦</div>
+            <h3>Move In / Move Out</h3>
+            <p>Thorough cleaning to prepare a property before moving in or leave it refreshed after moving out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <h2>A simple, professional booking process.</h2>
+          <p>
+            We make it easy to connect, schedule, and get a quote that fits your space and your needs.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Book a Walk-Through</h3>
+            <p>Choose a convenient time using our online booking link or contact us directly by phone or email.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>We Assess Your Space</h3>
+            <p>We review the size, condition, and cleaning needs of the property so pricing is accurate and clear.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Receive Your Quote</h3>
+            <p>Once we understand the job, we provide a straightforward quote and confirm the next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-wrap">
+        <div class="about-panel">
+          <h2>Why clients choose Re'yl Clean Service</h2>
+          <p>
+            Re'yl Clean Service was built around one simple goal: provide dependable, detail-oriented cleaning that makes every space feel fresh, peaceful, and polished.
+          </p>
+          <p>
+            We work with residential and commercial clients who want professional communication, consistent care, and results they can feel the moment they walk into the room.
+          </p>
+          <p>
+            From homes and offices to move-in and move-out jobs, our focus is always the same: show up professionally, clean thoroughly, and make the process easy.
+          </p>
+        </div>
+
+        <div class="about-highlight">
+          <h3>What makes us different</h3>
+          <ul>
+            <li>Professional walk-through estimates before major jobs</li>
+            <li>Responsive communication through business email and phone</li>
+            <li>Flexible residential and commercial cleaning options</li>
+            <li>Clean, polished branding that reflects serious service</li>
+            <li>A customer experience built on trust, clarity, and detail</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split-grid">
+        <div class="panel">
+          <h3>Service Area</h3>
+          <p>
+            We serve clients throughout Washington and can discuss availability based on your location and cleaning needs.
+          </p>
+
+          <div class="service-areas">
+            <span>Washington</span>
+            <span>Residential</span>
+            <span>Commercial</span>
+            <span>Move In / Out</span>
+            <span>Deep Cleaning</span>
+            <span>Walk-Through Estimates</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Ready to get started?</h3>
+          <p>
+            Book a free estimate online, call us directly, or send an email. We’ll help you find the right next step for your space.
+          </p>
+
+          <div class="hero-actions" style="margin-top: 18px;">
+            <a class="button primary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book Your Estimate</a>
+            <a class="button secondary" href="tel:2065811975">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <h2>Contact Re'yl Clean Service</h2>
+          <p>
+            Ready for a cleaner home, office, or property? Reach out directly or book your free estimate online.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-link" href="tel:2065811975">📞 Call or Text: (206) 581-1975</a>
+            <a class="contact-link" href="mailto:info@reylcleaning.com">📧 info@reylcleaning.com</a>
+            <a class="contact-link" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">📅 Book a Free Walk-Through</a>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3>Best for new clients</h3>
+          <p>
+            The fastest way to get started is to book a free estimate walk-through. That helps us assess your space and give you an accurate quote.
+          </p>
+
+          <div class="contact-actions">
+            <a class="button primary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book a Free Estimate</a>
+            <a class="button secondary" href="mailto:info@reylcleaning.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <div class="footer-brand">Re'yl Clean Service</div>
+        <div class="footer-small">Residential & Commercial Cleaning • Serving Washington</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <h1>Re'yl Clean Service</h1>
-    <h2>Professional Residential & Commercial Cleaning</h2>
-
-    <p>Reliable • Detailed • Affordable</p>
-    <p>📍 Serving Washington</p>
-
-    <p>
-      <a href="tel:2065811975" style="color:white; text-decoration:none;">
-        📞 Call or Text: (206) 581-1975
-      </a>
-    </p>
-
-    <p>
-      <a href="mailto:info@reylcleaning.com" style="color:white; text-decoration:none;">
-        📧 info@reylcleaning.com
-      </a>
-    </p>
-
-    <a class="button" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">
-      Get a Free Quote
-    </a>
-    <a class="button secondary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">
-      Book a Free Estimate
-    </a>
-  </section>
-
-  <section id="services">
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="services">
-      <div class="card">
-        <h3>House Cleaning</h3>
-        <p>Keep your home fresh, clean, and beautifully maintained.</p>
-      </div>
-
-      <div class="card">
-        <h3>Office Cleaning</h3>
-        <p>Professional cleaning that keeps your workplace spotless and welcoming.</p>
-      </div>
-
-      <div class="card">
-        <h3>Deep Cleaning</h3>
-        <p>Detailed cleaning for kitchens, bathrooms, and hard-to-reach areas.</p>
-      </div>
-
-      <div class="card">
-        <h3>Move In / Move Out</h3>
-        <p>Thorough cleaning before moving in or after moving out.</p>
-      </div>
     </div>
-  </section>
-
-  <section class="about" id="about">
-    <h2 class="section-title">Why Choose Re'yl Clean Service</h2>
-    <p>
-      We provide dependable residential and commercial cleaning with care,
-      quality, and attention to detail so every space feels fresh, peaceful, and polished.
-    </p>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2 class="section-title" style="color: white;">Contact Us</h2>
-
-    <p>Ready for a cleaner space?</p>
-
-    <p>
-      <a href="tel:2065811975" style="color:white; text-decoration:none;">
-        📞 Call or Text: (206) 581-1975
-      </a>
-    </p>
-
-    <p>
-      <a href="mailto:info@reylcleaning.com" style="color:white; text-decoration:none;">
-        📧 info@reylcleaning.com
-      </a>
-    </p>
-
-    <br>
-
-    <a class="button" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">
-      Book Your Walk-Through
-    </a>
-  </section>
-
-  <footer>
-    <p>© 2026 Re'yl Clean Service. All rights reserved.</p>
   </footer>
+
+  <div class="mobile-bar">
+    <a class="call" href="tel:2065811975">Call Now</a>
+    <a class="book" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book Now</a>
+  </div>
 
 </body>
 </html>
