@@ -62,7 +62,6 @@
       font-family: 'Playfair Display', serif;
     }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -129,7 +128,6 @@
       text-decoration: none;
     }
 
-    /* Hero */
     .hero {
       position: relative;
       overflow: hidden;
@@ -264,7 +262,6 @@
       background: rgba(255,255,255,0.22);
     }
 
-    /* Sections */
     section {
       padding: 84px 0;
     }
@@ -289,7 +286,6 @@
       font-size: 1.05rem;
     }
 
-    /* Trust bar */
     .trust-bar {
       background: var(--white);
       border-top: 1px solid rgba(0,0,0,0.05);
@@ -322,7 +318,6 @@
       font-size: 0.97rem;
     }
 
-    /* Services */
     .services {
       background: linear-gradient(to bottom, #fbf7ef, var(--cream));
     }
@@ -367,7 +362,6 @@
       font-size: 0.98rem;
     }
 
-    /* How it works */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -406,7 +400,6 @@
       color: var(--muted);
     }
 
-    /* About */
     .about {
       background: var(--beige);
     }
@@ -461,7 +454,6 @@
       margin-bottom: 10px;
     }
 
-    /* Service area / CTA split */
     .split-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -504,7 +496,6 @@
       font-size: 0.95rem;
     }
 
-    /* Contact */
     .contact {
       background:
         linear-gradient(rgba(79, 93, 61, 0.95), rgba(79, 93, 61, 0.95)),
@@ -571,7 +562,28 @@
       margin-top: 20px;
     }
 
-    /* Footer */
+    .portal-pay .panel {
+      background: #ffffff;
+    }
+
+    .payment-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .payment-note {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .payment-note strong {
+      color: var(--green-deep);
+    }
+
     footer {
       background: var(--green-deep);
       color: rgba(255,255,255,0.92);
@@ -614,12 +626,10 @@
       text-underline-offset: 4px;
     }
 
-    /* Mobile sticky bar */
     .mobile-bar {
       display: none;
     }
 
-    /* Responsive */
     @media (max-width: 1080px) {
       .service-grid,
       .trust-grid {
@@ -928,6 +938,49 @@
           <div class="contact-actions">
             <a class="button primary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book a Free Estimate</a>
             <a class="button secondary" href="mailto:info@reylcleaning.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portal-pay">
+      <div class="container">
+        <div class="section-head">
+          <h2>Client Portal & Payments</h2>
+          <p>Returning clients can request service, manage appointments, and pay securely online.</p>
+        </div>
+
+        <div class="split-grid">
+          <div class="panel">
+            <h3>Client Portal</h3>
+            <p>
+              Use the client portal to request follow-up cleanings, ask questions, and stay connected with our team.
+            </p>
+
+            <div class="hero-actions" style="margin-top:20px;">
+              <a class="button primary" href="mailto:info@reylcleaning.com?subject=Client%20Portal%20Request">Access Portal</a>
+              <a class="button secondary" href="https://calendar.app.google/Sp4GpbmmskrpJZJY8" target="_blank" rel="noopener">Book Appointment</a>
+            </div>
+
+            <p class="payment-note">
+              <strong>Your information is handled securely.</strong> Returning clients may have faster checkout options through our secure payment provider.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Pay Online</h3>
+            <p>Choose the payment method that works best for you.</p>
+
+            <div class="payment-stack">
+              <a class="button primary" href="PASTE-STRIPE-LINK-HERE" target="_blank" rel="noopener">💳 Pay with Card (Secure)</a>
+              <a class="button secondary" href="https://paypal.me/YOURNAME" target="_blank" rel="noopener">🟦 PayPal</a>
+              <a class="button secondary" href="https://venmo.com/YOURUSERNAME" target="_blank" rel="noopener">🟣 Venmo</a>
+              <a class="button secondary" href="https://cash.app/$YOURCASHTAG" target="_blank" rel="noopener">💰 Cash App</a>
+            </div>
+
+            <p class="payment-note">
+              <strong>🏦 Zelle:</strong> 206-581-1975
+            </p>
           </div>
         </div>
       </div>
